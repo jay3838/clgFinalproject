@@ -1,0 +1,131 @@
+#individual-post-title {
+    text-align: center;
+    font-size: 2em;
+    padding-top: 24px;
+    padding-bottom: 32px;
+    color: #333;
+}
+
+#individual-post-date {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-top: 1px solid #f1f4f8;
+    border-bottom: 1px solid #f1f4f8;
+    padding-left: 16px;
+    color: #adb5bd;
+}
+
+#individual-post-content {
+    white-space: pre-line;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+    line-height: 1.4;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 24px;
+}
+
+.cmtbtn {
+    text-align: right;
+    padding: 1.5rem;
+  }
+  .cmtbtn button {
+    padding: 0.375rem 0.75rem;
+    background-color: #004186;
+    color: #fff;
+    border: 1px solid #004186;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+  }
+  .cmtbtn button:hover {
+    background-color: #fff;
+    color: #004186;
+  }
+  .comment-form {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    background: #d6ffff;
+    display: none;
+    transition: all 0.5s ease-in-out;
+  }
+  .comment-form #name {
+    width: 40%;
+    margin-bottom: 1em;
+    border: 1px solid gray;
+    outline: none;
+    background: #d6ffff;
+    padding: 0.8em 1em;
+    border-radius: 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .comment-form input:focus {
+    box-shadow: 0 0 5px 5px skyblue;
+  }
+  .comment-form textarea {
+    width: 500px;
+    height: 150px;
+    border: 1px solid blue;
+    padding: 5px;
+  }
+  .nicEdit-main {
+    outline: none;
+  }
+  /* .nicEdit-main::before {
+    content: "Write Comment Here";
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+  } */
+  .nicEdit-main:focus:before {
+    display: none;
+  }
+  .submitbtn {
+    padding: 0.375rem 0.75rem;
+    background-color: #004186;
+    color: #fff;
+    border: 1px solid #004186;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    width: 12%;
+    margin-top: 1em;
+    display: block;
+    margin-left: 1em;
+  }
+  .showcomments {
+    margin-top: 2em;
+  }
+  .hrnew {
+    border: 1px solid lightgray;
+    width: 100%;
+  }
+  br {
+    line-height: 2px;
+  }
+
+  .showcomments label {
+    margin: 1em;
+  }
+  
+  #cmt span.lname {
+    font-weight: bold;
+  }
+  #cmt h4 {
+    display: inline;
+  }
+  @media (max-width:700px){
+    .cmtbtn{
+      display: none;
+    }
+    .comment-form{
+      display: none;
+    }
+  }
+  

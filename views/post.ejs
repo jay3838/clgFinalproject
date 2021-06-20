@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Post</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"  href="/css/styles.css" />
+        <link rel="stylesheet"  href="/css/post.css" />
+        <link rel="stylesheet"  href="/css/Jp.css" />
+    </head>
+     <body>
+        
+        
+    <div class="container post-container">
+            <div class="header">
+                <div class="header-container">
+                    <div class="post-image">
+                        <img class="yj" src="/uploads/<%= users.myImage %>"
+                         />
+                    </div>  
+                    <!-- <div class="title">POST</div> -->
+                </div>
+            </div>
+                      <div class="main">
+                <div class="main-container">
+                    <div class="navigation">
+                        <a href="/index">Back</a>
+                    </div>
+          
+                <form action="" method="POST">
+                    <div class="post-container">
+                        <div id="individual-post-title"><%= users.title %></div>
+                        <div id="individual-post-date"><%= users.Date %></div>
+                        <div id="individual-post-content"><%= users.content %></div>              
+                       
+                    </div>
+                </form>
+
+                <div class="cmtbtn" onclick="showcommentsection()">
+                    <button>Comment</button>
+                 </div>
+                  <div class="comment-form" id="c_form">
+                      
+                    <form  action="/comment" name="jp"  method="POST">
+                    <input type="hidden" name="post_id" value="<%= users._id %>"/>
+
+
+
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder="Enter Your Name"
+                    />
+                    <textarea
+                      name="comment"
+                      id="comment"
+                      cols="30"
+                      rows="10"
+                      placeholder="Write Comment"
+                    ></textarea>
+    
+                    <input type="submit" class="submitbtn" value="Submit" onclick="showAlert()"/>
+                    <%for(var i=0 ; i<users.comment.length;i++) { %>
+                        <div class="showcomments">
+                            
+                            
+
+                            <label for="Name" id="cmt"
+                            ><h4>Name :</h4>
+                            <span><%= users.name[i] %></span></label
+                          >
+                          <br />
+                          <br />
+                          <label for="comment" id="cmt"
+                            ><h4>Comment :</h4>
+                            <span><%= users.comment[i] %></span></label
+                          >
+                          <hr class="hrnew" />
+                        </div>
+
+                        <% } %>
+                    </div>
+                </form>
+                    </div>
+                </div>
+    
+
+        </div>
+
+
+        
+        <script>
+            function showAlert() {
+              var x = document.forms["jp"]["name"].value;
+              var y = document.forms["jp"]["comment"].value;
+    
+              if( x == "" && y=="" ){
+                        alert('plz enter name,comment');
+              }
+              else if ( x == "" && !y==""){
+                        alert('plz enter name');
+                    }  
+            //   else if ( !x == "" && y==""){
+            //             alert('plz enter comment');
+            //         }  
+            }
+    
+            </script>
+
+
+        
+          
+    </div>
+    
+    <script
+    src="http://js.nicedit.com/nicEdit-latest.js"
+    type="text/javascript"
+  ></script>
+  <script type="text/javascript">
+    bkLib.onDomLoaded(nicEditors.allTextAreas);
+  </script>
+  <script>
+    function showcommentsection() {
+      var cform = document.getElementById("c_form");
+      if (cform.style.display == "block") {
+        cform.style.display = "none";
+      } else {
+        cform.style.display = "block";
+      }
+    }
+  </script>
+    </body>
+
+</html>

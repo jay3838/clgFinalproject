@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="/css/navbar1.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mynavbar">
+      <a class="navbar-brand" href="/main"
+        ><img class="mylogo" src="/images/yjlogo.png" alt="Logo"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto text-center navbar-links">
+          <li class="nav-item active">
+            <a class="nav-link" href="/main"
+              ><span> Home</span> <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/covid19"
+              ><span>What Is Covid-19</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/prevention"
+              ><span>Prevention</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index"><span>Blog</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about"><span>About Us</span></a>
+          </li>
+
+
+
+          <% if(user) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout"
+                ><button
+                  type="button"
+                  id="mybtn"
+                  class="btn btn-outline-primary btn-sm"
+                >
+                  Logout
+                </button></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about"
+                ><button
+                  type="button"
+                  id="mybtn"
+                  class="btn btn-outline-primary btn-sm"
+                >
+                <%= user.firstname %>
+                </button></a
+              >
+            </li>
+            <% }  else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/login"
+              ><button
+                type="button"
+                id="mybtn"
+                class="btn btn-outline-primary btn-sm"
+              >
+                Login
+              </button></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register"
+              ><button
+                type="button"
+                id="mybtn"
+                class="btn btn-outline-primary btn-sm"
+              >
+                Register
+              </button></a
+            >
+          </li>
+
+          <% } %>
+  
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#"></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/css/navbar1.css" />
+    <script src="/js/navbar.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="brand-title">
+        <img src="/images/yjlogo.png" alt="My logo" />
+      </div>
+      <a href="#" class="toggle-button">
+        <img src="/images/menuicon.png" alt="Menu Icon" />
+      </a>
+      <div class="navbar-links">
+        <ul>
+          <li>
+            <a href="/main"><span>Home</span></a>
+          </li>
+          <li>
+            <a href="/covid19"><span>What is Covid-19</span></a>
+          </li>
+          <li>
+            <a href="/prevention"><span>Prevention</span></a>
+          </li>
+          <li>
+            <a href="/index"><span>Blog</span></a>
+          </li>
+          <li>
+            <a href="/about"><span>About Us</span></a>
+          </li>
+        
+             
+           
+          <% if(user) { %>
+          <li>
+            <a href="/logout"><button class="login_btn">Logout</button></a>
+          </li>
+          <li>
+            <a href=""
+              ><button class="signup_btn"><%= user.firstname %></button></a
+            >
+          </li>
+          <% }  else { %>
+            <li>
+                <a href="/login"><button class="login_btn">Login</button></a>
+              </li>
+              <li>
+                <a href="/register"
+                  ><button class="signup_btn">Register</button></a
+                >
+              </li>
+            <% } %>
+
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html> -->

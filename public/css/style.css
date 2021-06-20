@@ -1,0 +1,142 @@
+/* *{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+} */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#nav {
+  height: 50px;
+}
+
+#map {
+  width: 100%;
+  height: 500px;
+}
+
+.chart-data {
+  width: 30%;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.map-info {
+  background-color: bisque;
+  height: 400px;
+}
+
+.data-info {
+  height: 700px;
+  display: flex;
+  justify-content: center;
+}
+
+.country-data {
+  margin-top: 20px;
+  overflow: scroll;
+  height: 400px;
+}
+
+.info-flag img {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.info-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+.info-container {
+  width: 150px;
+}
+
+.info-flag {
+  height: 80px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.info-confirmed,
+.info-recovered,
+.info-deaths {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* hfuksdhfjksf */
+
+.alert {
+  background: #ffdb9b;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  border-radius: 4px;
+  border-left: 8px solid #ffa502;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.alert.showAlert {
+  opacity: 1;
+  pointer-events: auto;
+}
+.alert.show {
+  animation: show_slide 1s ease forwards;
+}
+@keyframes show_slide {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-10%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+.alert.hide {
+  animation: hide_slide 1s ease forwards;
+}
+@keyframes hide_slide {
+  0% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.alert .fa-exclamation-circle {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ce8500;
+  font-size: 30px;
+}
+.alert .msg {
+text-align: center;
+  padding: 0 20px;
+  font-size: 18px;
+  color: #ce8500;
+  font-family: sans-serif;
+}
+
+
+.alert {
+  z-index: 111;
+}

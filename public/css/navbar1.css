@@ -1,0 +1,52 @@
+.mylogo {
+    height: 90px;
+    width: 100px;
+  }
+  .mynavbar {
+    height: 100px;
+  }
+  #mybtn {
+    padding-left: 10px;
+    align-items: center;
+    padding-right: 10px;
+    margin-top: -2px;
+  }
+  .navbar-links li a {
+    position: relative;
+    font-size:1rem; 
+   }
+  .navbar-links li a span:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 80%;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.5s linear;
+  }
+  
+  .navbar-links li a span:hover:before {
+    width: 100%;
+    background-color: #6c5ce7;
+  }
+  
+  /* Responsive CSS Code */
+  /* // No media query since this is the default in Bootstrap */
+  
+  /* // Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {
+  }
+  
+  /* // Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+  }
+  
+  /* // Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+  }
+  
+  /* // Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+  }
+  

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>My Blog</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="author-image"></div>
+      <div class="author-name">Covid-19 Blog</div>
+      <div class="author-slogan">Welcome to My Blog</div>
+    </div>
+    <div class="main">
+      <div class="add-post">
+        <a href="/new-post">
+          <div class="nav-button new-post-button">+</div>
+        </a>
+      </div>
+      <div class="add-post">
+        <a href="/main">
+          <div class="nav-button new-cancel-button">X</div>
+        </a>
+      </div>
+    <%for(var i=0 ; i<users.length;i++) { %>
+        <form action="" method="GET" enctype="multipart/form-data">
+      <a  class="jp" href="/post/<%= users[i]._id %>">
+
+      <div class="main-container blog-posts">
+        <div class="post">
+            <% if(users[i].myImage) { %>
+            <div class="post-image" >
+            <img src="/uploads/<%= users[i].myImage %>" width="200" height="200">
+            </div>
+            <% } %>
+
+            <div class="post-content">
+                <div class="post-date"><%= users[i].Date %></div>
+                <div class="post-title"><%= users[i].title %></div>
+                <div class="post-text"><%= users[i].content %></div>
+            </div>
+        </div>
+      </div>
+      </a>
+      <% } %>
+    </form>
+</div>
+  </body>
+</html>
+
+
+
+
+
+
+
